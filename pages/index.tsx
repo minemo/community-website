@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/Link'
+import Image from 'next/Image'
 import styles from '../styles/Home.module.css'
 import { choices } from '@thi.ng/transducers'
 
@@ -13,9 +14,9 @@ interface Member {
 }
 
 let members: Member[] = [
-  {name:'Mo',description:'Programmierer, Künstler,...'},
-  {name:'Ryan',description:'Platzhalter'},
-  {name:'Marlon',description:'Content-Creator, Youtuber,...'}]
+  {name:'Mo',description:'Programmierer, Künstler,...', bgcol: choices(["red", "blue", "green"]).next().value},
+  {name:'Ryan',description:'Etwas längerer Platzhalter', bgcol: choices(["red", "blue", "green"]).next().value},
+  {name:'Marlon',description:'Content-Creator, Youtuber,...', bgcol: choices(["red", "blue", "green"]).next().value}]
 
 
 
@@ -30,7 +31,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main >
         <h1 className={styles.title}>
           Willkommen {' '}
           <a style={{color: rcol}}>{namechoice}</a>
@@ -38,10 +39,13 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           {members.map((member) =>(
-              <div style={{background:member.bgcol}} key={member.name.toLowerCase()}>
-                  <h3>{member.name}</h3>
+              <div className={styles.membertab} style={{background:member.bgcol}} key={member.name.toLowerCase()}>
+                  <Link href={'/i/' + member.name.toLowerCase()}>
+                  <div>
+                  <h3 className={styles.name}>{member.name}</h3>
                   <p className={styles.description}>{member.description}</p>
-                  <Link href={'/i/' + member.name.toLowerCase()}>mehr</Link>
+                  </div>
+                  </Link>
               </div>
           ))}
         </div>

@@ -31,8 +31,8 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  line-height: 1;
+  font-size: 3em;
   font-family: Lora;
   font-style: italic;
 }
@@ -58,13 +58,33 @@
 }
 
 .grid {
-  display: flex;
+  display: inline-flex;
   justify-content: space-evenly;
+  width: 100%;
+  height: calc(100vh - 3em)
 }
 
+.name {
+  font-family: Inter;
+  font-size: 2em;
+  font-variant: light;
+}
 
 .description {
   font-family: 'Courier New';
-  font-size: 1pc;
+  font-size: 1em;
   margin-bottom: 5%;
+}
+
+.membertab {
+  transition: all 0.3s ease-in-out;
+  padding: 1%;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.membertab:hover {
+  transition: .5s ease-in-out;
+  padding: 5%;
 }
