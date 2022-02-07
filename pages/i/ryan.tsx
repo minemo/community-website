@@ -1,14 +1,17 @@
-import Link from 'next/link'
+import Link from 'next/Link'
+import { NextPage } from 'next/types'
 
-export default function Ryan() {
+const Ryan: NextPage = () => {
     return (
-        <>
-          <h1>Hier gibt es noch nichts...</h1>
-          <h2>
-            <Link href="/">
-              <a>Back to home</a>
-            </Link>
-          </h2>
-        </>
+        <div>
+          <h1>Nothing here, but us Chickens!</h1>
+          <Link href="/">
+            <a>
+              Bacc
+            </a>
+          </Link>
+        </div>
       )
 }
+
+export default Ryan

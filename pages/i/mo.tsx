@@ -1,14 +1,18 @@
-import Link from 'next/link'
+import styles from '../../styles/mo.module.css'
+import Link from 'next/Link'
+import { NextPage } from 'next/types'
 
-export default function Mo() {
+const Mo: NextPage = () => {
     return (
-        <>
-          <h1>Hier gibt es noch nichts...</h1>
-          <h2>
-            <Link href="/">
-              <a>Back to home</a>
-            </Link>
-          </h2>
-        </>
+        <div>
+          <h1 className={styles.title}>Nothing here, but us Chickens!</h1>
+          <Link href="/">
+            <a className={styles.back}>
+              Bacc
+            </a>
+          </Link>
+        </div>
       )
 }
+
+export default Mo

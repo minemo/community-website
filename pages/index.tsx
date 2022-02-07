@@ -13,9 +13,11 @@ interface Member {
 
 }
 
+// Neue Member hier hinzufügen. 
+// Das Layout *sollte* sich automatisch anpassen
 let members: Member[] = [
-  {name:'Mo',description:'Programmierer, Künstler,...', bgcol: choices(["red", "blue", "green"]).next().value},
-  {name:'Ryan',description:'Etwas längerer Platzhalter', bgcol: choices(["red", "blue", "green"]).next().value},
+  {name:'Mo',description:'Programmierer, Künstler,...', bgimg: "/images/mobg.png"},
+  {name:'Ryan',description:'Etwas längerer Platzhalter', bgcol: "cyan"},
   {name:'Marlon',description:'Content-Creator, Youtuber,...', bgcol: choices(["red", "blue", "green"]).next().value}]
 
 
@@ -39,7 +41,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           {members.map((member) =>(
-              <div className={styles.membertab} style={{background:member.bgcol}} key={member.name.toLowerCase()}>
+              <div className={styles.membertab} style={{backgroundImage: `url(${member.bgimg})`}} key={member.name.toLowerCase()}>
                   <Link href={'/i/' + member.name.toLowerCase()}>
                   <div>
                   <h3 className={styles.name}>{member.name}</h3>

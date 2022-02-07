@@ -1,0 +1,22 @@
+.title {
+    font-family: Lora;
+    font-style: italic;
+}
+
+.back {
+    color:red;
+    font-family: Inter;
+    font-size: 2em;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.back:hover {
+    transition: all 0.5s ease-in-out;
+    font-size: 3em;
+    color:white;
+    border-radius: 10px;
+    padding: 5px;
+    background: rgb(189, 189, 189);
+
+}
